@@ -1,25 +1,26 @@
 {
-  "name": "mmm-mqtt",
+  "name": "mmm-owntracks",
   "version": "0.1.0",
-  "description": "MQTT Module for MagicMirror",
+  "description": "Owntracks Module for MagicMirror",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/javiergayala/MMM-mqtt.git"
+    "url": "git+https://github.com/javiergayala/MMM-Owntracks.git"
   },
   "keywords": [
     "MagicMirror",
-    "mqtt"
+    "mqtt",
+    "Owntracks"
   ],
   "author": "Javier Ayala",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/javiergayala/MMM-mqtt/issues"
+    "url": "https://github.com/javiergayala/MMM-Owntracks/issues"
   },
-  "homepage": "https://github.com/javiergayala/MMM-mqtt#readme",
+  "homepage": "https://github.com/javiergayala/MMM-Owntracks#readme",
   "dependencies": {
     "mqtt": "^1.10.0"
   }

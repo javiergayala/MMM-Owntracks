@@ -1,7 +1,7 @@
 'use strict';
 
 /* Magic Mirror
- * Module: MMM-mqtt
+ * Module: MMM-Owntracks
  *
  * By Javier Ayala http://www.javierayala.com/
  * MIT Licensed.
@@ -9,10 +9,11 @@
 
 const NodeHelper = require('node_helper');
 var mqtt = require('mqtt');
+// const fs = require('fs');
 
 module.exports = NodeHelper.create({
   start: function() {
-    console.log('MMM-mqtt started ...');
+    console.log('MMM-Owntracks started ...');
   },
 
   getMqtt: function(payload) {

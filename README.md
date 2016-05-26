@@ -1,9 +1,9 @@
-# MMM-mqtt
+# MMM-Owntracks
 
-This is an extension for the [MagicMirror²](https://github.com/MichMich/MagicMirror).  It provides the ability to subscribe to MQTT topics and display them.
+This is an extension for the [MagicMirror²](https://github.com/MichMich/MagicMirror).  It provides the ability to subscribe to Owntracks location data and display it.
 
 ## Installation
-1. Navigate into your MagicMirror's `modules` folder and execute `git clone https://github.com/javiergayala/MMM-mqtt.git`. A new folder will appear, likely called `MMM-mqtt`.  Navigate into it.
+1. Navigate into your MagicMirror's `modules` folder and execute `git clone https://github.com/javiergayala/MMM-Owntracks.git`. A new folder will appear, likely called `MMM-Owntracks`.  Navigate into it.
 2. Execute `npm install` to install the node dependencies.
 
 ## Using the module
@@ -12,9 +12,9 @@ To use this module, add it to the modules array in the `config/config.js` file:
 ````javascript
 modules: [
 	{
-		module: 'MMM-mqtt',
+		module: 'MMM-Owntracks',
 		position: 'top_right',	// This can be any of the regions. Best results in left or right regions.
-		header: 'Living Room Temperature', // This is optional
+		header: 'Owntracks', // This is optional
 		config: {
 			// See 'Configuration options' for more information.
 		}
@@ -30,7 +30,7 @@ The following options can be configured:
 |---|---|
 | `mqttServer`  | Connection string for the server to connect to (`mqtt://localhost`)  |
 | `loadingText`  | Text to display while waiting for data to load  |
-| `topic`  | MQTT Topic to subscribe to on the server (`sensors/temperature/livingroom`)  |
+| `topic`  | MQTT Topic to subscribe to on the server (`owntracks/+/+/location`)  |
 | `showTitle`  | Boolean to show/hide a title (default: `false`)  |
 | `title`  | Title to show if `showTitle` is `true`  |
 | `interval`  | Refresh interval, not including MQTT subscription deliveries. (default: `300000`)  |
@@ -48,7 +48,7 @@ Contributions of all kinds are welcome, not only in the form of code but also wi
 
 Please keep the following in mind:
 
-- **Bug Reports**:  Make sure you're running the latest version. If the issue(s) still persist: please open a clearly documented issue with a clear title. 
+- **Bug Reports**:  Make sure you're running the latest version. If the issue(s) still persist: please open a clearly documented issue with a clear title.
 - **Minor Bug Fixes**: Please send a pull request with a clear explanation of the issue or a link to the issue it solves.
 - **Major Bug Fixes**: please discuss your approach in an GitHub issue before you start to alter a big part of the code.
 - **New Features**: please please discuss in a GitHub issue before you start to alter a big part of the code. Without discussion upfront, the pull request will not be accepted / merged.

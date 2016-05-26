@@ -2,22 +2,26 @@
 /* global Module */
 
 /* Magic Mirror
- * Module: MMM-mqtt
+ * Module: MMM-Owntracks
  *
  * By Javier Ayala http://www.javierayala.com/
  * MIT Licensed.
  */
 
-Module.register('MMM-mqtt', {
+Module.register('MMM-Owntracks', {
 
   defaults: {
     mqttServer: 'mqtt://test.mosquitto.org',
-    loadingText: 'Loading MQTT Data...',
-    topic: '',
+    loadingText: 'Loading Location Data...',
+    otUser: '+',
     showTitle: false,
     title: 'MQTT Data',
     interval: 300000,
-    postText: ''
+    postText: '',
+    port: 1883,
+    username: false,
+    password: false,
+    ca: false
   },
 
   start: function() {
@@ -28,6 +32,20 @@ Module.register('MMM-mqtt', {
   },
 
   updateMqtt: function(self) {
+    self.mqttOpts = {};
+    if (self.config.port) {
+      self.mqttOpts.port = self.config.port;
+    }
+    if (self.config.username) {
+      self.mqttOpts.username = self.config.username;
+    }
+    if (self.config.password) {
+      self.mqttOpts.password = self.config.password;
+    }
+    // if (self.config.ca) {
+    //   self.mqttOpts.ca = fs.readFileSync(self.config.ca);
+    // }
+    self.config.topic = 'owntracks/' + self.config.otUser + '/+/event';
     self.sendSocketNotification('MQTT_SERVER', { mqttServer: self.config.mqttServer, topic: self.config.topic });
     setTimeout(self.updateMqtt, self.config.interval, self);
   },
